@@ -14,7 +14,7 @@ RUN yum -y update && \
 # https://surfer.nmr.mgh.harvard.edu/fswiki//FS7_linux
 RUN cd /usr/local && \
     wget https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.2.0/freesurfer-linux-centos7_x86_64-7.2.0.tar.gz && \
-    tar -zxpf freesurfer-linux-centos7_x86_64-7.2.0.tar.gz &&
+    tar -zxpf freesurfer-linux-centos7_x86_64-7.2.0.tar.gz && \
     rm freesurfer-linux-centos7_x86_64-7.2.0.tar.gz
 
 # setup fs env
