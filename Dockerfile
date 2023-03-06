@@ -7,6 +7,7 @@ RUN yum -y update && \
     yum -y install mesa-libGLU mesa-dri-drivers && \
     yum -y install ImageMagick && \
     yum -y install xorg-x11-server-Xvfb xorg-x11-xauth which && \
+    yum -y install java-1.8.0-openjdk && \
     yum clean all
 
 # Freesurfer
@@ -16,9 +17,10 @@ RUN cd /usr/local && \
     wget https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.2.0/freesurfer-linux-centos7_x86_64-7.2.0.tar.gz && \
     tar -zxpf freesurfer-linux-centos7_x86_64-7.2.0.tar.gz && \
     rm freesurfer-linux-centos7_x86_64-7.2.0.tar.gz
+ENV FREESURFER_HOME /usr/local/freesurfer
+RUN ${FREESURFER_HOME}/bin/fs_install_mcr R2014b
 
 # setup fs env
-ENV FREESURFER_HOME /usr/local/freesurfer
 ENV OS Linux
 ENV FREESURFER_HOME /usr/local/freesurfer
 ENV FREESURFER /usr/local/freesurfer
