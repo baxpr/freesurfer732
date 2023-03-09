@@ -1,3 +1,3 @@
-# freesurfer732
+# fs-lean
 
-Docker container for Freesurfer 7.3.2
+Docker container for Freesurfer, with MCR installed. Version specified in Dockerfile.
